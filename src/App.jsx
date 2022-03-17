@@ -14,12 +14,13 @@ function App() {
     React.useEffect(()=>{
         window.localStorage.setItem('select', select);
     }, [select]);
+
     return (
         <main className='main'>
             <div className="container">
                 <div className="main__inner">
-                    <Stack direction={'row'} spacing={2} alignItems="center" justifyContent="center">
-                        <FormControl sx={{ minWidth: 120 }}>
+                    <Stack direction={'row'} spacing={2} alignItems="center" justifyContent="center" flexWrap={'wrap'}>
+                        <FormControl sx={{ minWidth: 120 }} margin={'dense'}>
                             <InputLabel id='demo-select'>Select</InputLabel>
                             <Select labelId='demo-select' label='Select' className='select' value={select} onChange={(evt)=>{
                                 setSelect(evt.target.value);
