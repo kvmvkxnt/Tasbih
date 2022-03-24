@@ -43,7 +43,7 @@ function Users() {
 
                     <Grid className="users__list" mb={3} rowSpacing={4} justifyContent="space-evenly" container spacing={4}>
                         {loading && <Loading />}
-                        {filteredUsers ? filteredUsers.map((user) => <Grid item className="users__item" key={user.id}>
+                        {filteredUsers && filteredUsers.map((user) => <Grid item className="users__item" key={user.id}>
                             <Link to={`/posts/${user.id}`} className="users__link" style={{ textDecoration: "none", color: "black", fontWeight: '300' }} >
                                 <Card>
                                     <CardActionArea>
@@ -98,7 +98,7 @@ function Users() {
                                 </Card>
                             </Link>
                         </Grid>
-                        ) : 'Error'}
+                        )}
                     </Grid>
 
                     <Button variant='outlined' sx={{ marginBottom: "60px" }} className="users__button" onClick={() => {
